@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <link rel="stylesheet" href="style.css" />
+	<title>Valuta calculator</title>
+</head>
+<body>
+  <div class="container">
+  <h2>Unos podataka</h2>
+   <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc-0qH7lN7xUUqsZ5zxGcra9WfgB6_qNTY3O0LF8gg3uWV-AA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true" class="myform">
+   <input type="text" name="entry.1540988924" placeholder="Broj računa" required>
+   <input type="text" name="entry.608752940" placeholder="Iznos računa" required>
+   <input type="date" name="entry.1184817803" placeholder="Datum računa">
+   <input type="text" name="entry.1959811182" placeholder="Valuta" required>
+   <button type="submit" class="btn">Gotovo</button>
+    </form>
+	<span id="msg"></span>
+  </div>
+  
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted){msgg();}"></iframe> 
+<script>
+const msg = document.getElementById("msg");
+const form = document.querySelector(".myform");
+
+function msgg(){
+ if(submitted){
+ msg.innerHTML = "Podatci su sačuvani!";
+ setTimeout(function(){
+ msg.innerHTML = "";
+ },4000)
+ form.reset()
+}};
+</script>
+</body>
+</html>
